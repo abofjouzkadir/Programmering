@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kapitel 1 Lektion 1</title>
+</head>
+<body>
+  <script src="http://koda.nu/simple.js">
+
+  var player = {
+    x:800,
+    y:500,
+    size:70,
+    color: "blue",
+    speedX: 5, // km/h /7 med 0, sp blir bollen fallande, bollen har en riktning
+    speedY: 0, // km/h // bollen rör sig upp! endast Y- koordinaten
+    directionX: 1,
+    directionY: -1
+  };
+
+
+  var enemy = {
+    x: 100,
+    y: 100,
+    bredd: 50,
+    höjd: 50,
+    color: "red",
+    speedX: 5,
+    speedY: 0,
+    directionX: 1,
+    directionY: -1
+  }
+
+  function update() {
+    clearScreen();
+    circle(player.x,player.x,player.size,player.color);
+     player.x = player.x + player.speedX * player.directionX
+
+    player.y = player.y + player.speedY * player.directionY
+
+rectangle(enemy.x,enemy.y,enemy.bredd,enemy.höjd,enemy.color)
+
+// enemy.x = enemy.x + enemy.speedX * enemy.directionX
+
+setTimeout(() => {
+    enemy.x = enemy.x + mouse.x / 100
+}, 1000)
+
+enemy.y = enemy.y + enemy.speedY * enemy.directionY
+     console.log(player.x)
+  }
+
+ 
+
+
+  </script>
+</body>
+</html>
