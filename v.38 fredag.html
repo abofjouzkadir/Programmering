@@ -13,8 +13,12 @@ function update(){
     if (mouse.left){
         if(keyboard.q){
             rectangle(mouse.x, mouse.y, 50, 50, color)
+        } else {
+             circle(mouse.x, mouse.y, size, color)
+
         }
-        circle(mouse.x, mouse.y, size, color)
+       
+
     }
     if(mouse.right){
         circle(mouse.x, mouse.y, size, "white")
